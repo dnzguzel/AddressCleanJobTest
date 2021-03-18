@@ -1,0 +1,31 @@
+[
+		{ 
+			"addressText": "Elma Sokak Armut Apartmani 216 371 59 39",
+			"district": "Dikilitaş",
+			"town": "Beşiktaş",
+			"city": "İstanbul" 
+		},
+		{ 
+			"addressText": "Arnavutköy Merkez Mahallesi Billur Sokak No.3 Daire :2 Çiçekçi Üstü",
+			"district": "Arnavutköy Merkez", 
+			"town": "Arnavutköy", 
+			"city": "İstanbul" 
+		} ,
+		{
+			"addressText": "Arnavutköy Merkez Mahallesi Billur Sokak No.3 Daire :2 Çiçekçi Üstü",
+			"district": "Arnavutköy Merkez",
+			"town": "Arnavutköy"
+		},
+		{ 
+			"addressText": "Elma Sokak Armut Apartmani 216 371 59 39", 
+			"district": "Dikilitaş",
+			"town": "Beşiktaş",
+			"city": "İstanbul" 
+		}, 
+		{ 
+			"addressText": "Arnavutköy Merkez Mahallesi Billur Sokak No.3 Daire :2 Çiçekçi Üstü",
+			"district": "Arnavutköy Merkez",
+			"town": "Arnavutköy",
+			"city": "İstanbul" 
+		} 
+]

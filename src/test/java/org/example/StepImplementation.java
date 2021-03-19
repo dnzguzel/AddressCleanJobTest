@@ -3,9 +3,7 @@ package org.example;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-
 import java.util.HashSet;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepImplementation {
@@ -45,5 +43,14 @@ public class StepImplementation {
             }
         }
         return count;
+    }
+    @Step("Read from cvs file <usersTable>")
+    public void readFromCsvFile(Table usersTable) {
+        Object liste[] = new Object[3];
+        for (TableRow row : usersTable.getTableRows()) {
+            String name = row.getCell("name");
+            String surname = row.getCell("surname");
+            System.out.println("Merhaba "+name+" "+surname);
+        }
     }
 }

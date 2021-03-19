@@ -33,4 +33,8 @@ Here's a step that takes a table
      |Snap  |1          |
      |GoCD  |1          |
      |Rhythm|0          |
-* Read from cvs file <table: /Files/users.csv>
+     
+## read from csv file
+tags: userTables
+
+* Read from cvs file <table: Files/users.csv>

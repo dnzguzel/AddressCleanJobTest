@@ -44,10 +44,10 @@ public class StepImplementation {
         }
         return count;
     }
-    @Step("Read from cvs file <usersTable>")
-    public void readFromCsvFile(Table usersTable) {
+    @Step("Read from cvs file <table>")
+    public void readFromCsvFile(Table table) {
         Object liste[] = new Object[3];
-        for (TableRow row : usersTable.getTableRows()) {
+        for (TableRow row : table.getTableRows()) {
             String name = row.getCell("name");
             String surname = row.getCell("surname");
             System.out.println("Merhaba "+name+" "+surname);

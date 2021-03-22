@@ -9,7 +9,6 @@ public class StepImplementation {
 
     @Step("Read from cvs file <table>")
     public void readFromCsvFile(Table table) {
-        Object liste[] = new Object[3];
         for (TableRow row : table.getTableRows()) {
             String value = row.getCell("value");
             System.out.println("Adres: "+value);

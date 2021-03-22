@@ -10,7 +10,7 @@
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
-            <version>[0.6.8,)</version>
+            <version>0.7.13</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -18,12 +18,6 @@
             <artifactId>junit</artifactId>
             <version>4.13</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations-java5</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
@@ -34,13 +28,19 @@
                 <version>1.4.3</version>
                 <executions>
                     <execution>
+                        <id>validate</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>execute</id>
                         <phase>test</phase>
+                        <goals><goal>execute</goal></goals>
                         <configuration>
                             <specsDir>specs</specsDir>
                         </configuration>
-                        <goals>
-                            <goal>execute</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>

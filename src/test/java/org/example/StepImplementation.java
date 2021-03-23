@@ -11,7 +11,7 @@ public class StepImplementation {
 
     @Step("Read from cvs file <table>")
     public void readFromCsvFile(Table table) {
-        String[] liste= {"Osmanyılmaz mah.","Istasyon mahallesi dere sokak no:41ss","Fatih mah cami sok n 12 d:3"};
+        String[] liste= {"Osmanyılmaz mah.","Istasyon mahallesi dere sokak no:41","Fatih mah cami sok n 12 d:3"};
         int i = 0;
         for (TableRow row : table.getTableRows()) {
             String value = row.getCell("value");

@@ -9,7 +9,7 @@ public class StepImplementation {
         System.out.println("Test is starting.");
     }
 
-    @Step("Read from cvs file <table>")
+    @Step("Compare from cvs <table>")
     public void readFromCsvFile(Table table) {
         String[] liste= {"Osmanyılmaz mah.","Istasyon mahallesi dere sokak no:41","Fatih mah cami sok n 12 d:3"};
         int i = 0;

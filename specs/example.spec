@@ -6,7 +6,7 @@ Deneme1
 tags: deneme1
 * deneme adımı
 
-ReadFromCVSFile
-------------------
-tags: readTables
-* Read from cvs file <table: Files/values.csv>
+Compare from csv file
+---------------------
+tags: comparing
+* Compare from cvs <table: Files/values.csv>

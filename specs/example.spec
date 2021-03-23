@@ -1,10 +1,12 @@
 Specification Heading
 =====================
 
-## Deneme1
+Deneme1
+-------
 tags: deneme1
 * deneme adımı
 
-## read from csv file
+ReadFromCVSFile
+------------------
 tags: readTables
 * Read from cvs file <table: Files/values.csv>

@@ -11,11 +11,14 @@ public class StepImplementation {
 
     @Step("Read from cvs file <table>")
     public void readFromCsvFile(Table table) {
+        String[] liste= {"Osmanyılmaz mah.","Istasyon mahallesi dere sokak no:41ss","Fatih mah cami sok n 12 d:3"};
+        int i = 0;
         for (TableRow row : table.getTableRows()) {
             String value = row.getCell("value");
             System.out.println("Adres: "+value);
-            Assert.assertFalse("Address is not same with into the csv file!",
-                    value.equals("Istasyon mahallesi dere sokak no:41"));
+            Assert.assertEquals(value,liste[i]);
+            System.out.println(i+". address is matched.");
+            i++;
         }
     }
     @Step("deneme adımı")

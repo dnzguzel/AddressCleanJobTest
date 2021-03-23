@@ -1,0 +1,1 @@
+var index = {"Tags":{"readTables":["specs/example.html"]},"Specs":{"Specification Heading":["specs/example.html"]}};

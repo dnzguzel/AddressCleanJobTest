@@ -9,18 +9,15 @@
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
             <version>0.7.13</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <scope>test</scope>
             <version>3.0.7</version>
         </dependency>
         <dependency>
@@ -31,7 +28,6 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <scope>test</scope>
             <version>3.0.7</version>
         </dependency>
     </dependencies>

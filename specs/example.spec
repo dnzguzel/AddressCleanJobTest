@@ -3,4 +3,4 @@ Specification Heading
 
 AddressCleanCheck
 ------------
-* Clean address check from <table: Files/AddressListMatched.csv>
+* Clean address check from <table: Files/AddressListSample.csv>

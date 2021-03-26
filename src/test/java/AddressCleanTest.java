@@ -84,21 +84,25 @@ public class AddressCleanTest {
             cleanedAddress.add(addressOutput.getCleanText());
         }
 
-        int i=0;
+        int total=0;
         int count=0;
         List<String> inmatchedAddress = new ArrayList();
 
-        Gauge.writeMessage("Inmatched Addresses:");
+        Gauge.writeMessage("Addresses matching results:");
         Gauge.writeMessage("--------------------");
 
         for (AddressOutput addressOutput : list) {
-            if (!expectedText.get(i).equals(addressOutput.getCleanText())) {
-                Gauge.writeMessage("ADDRESSTEXT: "+AddressText.get(i)+", CLEANTEXT: "+addressOutput.getCleanText()+", EXPECTEDTEXT: "+expectedText.get(i));
-                inmatchedAddress.add(AddressText.get(i));
+            if (!expectedText.get(total).equals(addressOutput.getCleanText())) {
+                Gauge.writeMessage("ADDRESSTEXT: "+AddressText.get(total)+", CLEANTEXT: "+addressOutput.getCleanText()+", EXPECTEDTEXT: "+expectedText.get(total));
+                inmatchedAddress.add(AddressText.get(total));
                 count++;
             }
-            i++;
+            total++;
         }
-        Assert.assertFalse("All addresses aren't matched.",count>0);
+        if(count>0){
+            Assert.assertFalse(count+" of "+total+" address do not match.",count>0);
+        }else{
+            Gauge.writeMessage(total+" addresses are match.");
+        }
     }
 }

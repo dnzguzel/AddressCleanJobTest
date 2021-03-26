@@ -102,7 +102,7 @@ public class AddressCleanTest {
         if(count>0){
             Assert.assertFalse(count+" of "+total+" address do not match.",count>0);
         }else{
-            Gauge.writeMessage(total+" addresses are match.");
+            Gauge.writeMessage("All of "+total+" addresses are match.");
         }
     }
 }

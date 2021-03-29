@@ -88,7 +88,7 @@ public class AddressCleanTest {
         int count=0;
         List<String> inmatchedAddress = new ArrayList();
 
-        Gauge.writeMessage("Addresses matching results:");
+        Gauge.writeMessage("Comparison results:");
         Gauge.writeMessage("--------------------");
 
         for (AddressOutput addressOutput : list) {
@@ -100,7 +100,7 @@ public class AddressCleanTest {
             total++;
         }
         if(count>0){
-            Assert.assertFalse(count+" of "+total+" address do not match.",count>0);
+            Assert.assertFalse(count+" of "+total+" addresses does not match.",count>0);
         }else{
             Gauge.writeMessage("All of "+total+" addresses are match.");
         }

@@ -93,7 +93,7 @@ public class AddressCleanTest {
             for (AddressOutput addressOutput : list) {
                 if (!expectedText.get(total).equals(addressOutput.getCleanText())) {
                     int row = total+1;
-                    Gauge.writeMessage(row+") CleanText comparing error! CLEANTEXT: "+addressOutput.getCleanText()+" || EXPECTEDTEXT: "+expectedText.get(total));
+                    Gauge.writeMessage(row+") CleanText comparing error! CLEANTEXT: "+addressOutput.getCleanText()+" || EXPECTED CLEANTEXT: "+expectedText.get(total));
                     textCount++;
                 }
                 if (!districtId.get(total).equals(addressOutput.getDistrictId())) {

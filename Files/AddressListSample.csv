@@ -1,8 +1,8 @@
-AddressText,District,Town,City,ExpectedText
-"Arnavutköy Merkez Mahallesi Billur Sokak No.3 Daire :2 Çiçekçi Üstü","Arnavutköy Merkez","Arnavutköy",İstanbul,"arnavutkoy merkez mah, billur sok, 3, arnavutkoy, istanbul"
-"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü","Osmanyılmaz Mah",Gebze,Kocaeli,"osman99 yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli"
-"Elma Sokak Armut Apartmani 216 371 59 39","Dikilitaş",Beşiktaş,İstanbul,"dikilitas mah, elma sok, 216, besiktas, istanbul"
-"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü","Osmanyılmaz Mah",Gebze,Kocaeli,"osman yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli"
-"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü",,Gebze,Kocaeli,"osman yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli"
-"Elma Sokak Armut Apartmani 216 371 59 39","Dikilitaş",Beşiktaş,İstanbul,"elma sok, 216, beşiktas, istanbul"
-"Kemalpasa mahallesi 1 halide edip sokak no:10 d:1 sefakoy/kucukcekmece/istanbul",KEMALPAŞA,KÜÇÜKÇEKMECE,İstanbul,"kemalpasa mah, 1 halide edip sok, 10, kucukcekmece, istanbul"
+AddressText,District,Town,City,ExpectedText,DistrictId,DistrictXdockId
+"Arnavutköy Merkez Mahallesi Billur Sokak No.3 Daire :2 Çiçekçi Üstü","Arnavutköy Merkez","Arnavutköy",İstanbul,"arnavutkoy merkez mah, billur sok, 3, arnavutkoy, istanbul",0,0
+"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü","Osmanyılmaz Mah",Gebze,Kocaeli,"osman99 yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli",4987,25301
+"Elma Sokak Armut Apartmani 216 371 59 39","Dikilitaş",Beşiktaş,İstanbul,"dikilitas mah, elma sok, 216, besiktas, istanbul",950,4691
+"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü","Osmanyılmaz Mah",Gebze,Kocaeli,"osman yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli",49875,2530
+"Osmanyılmaz Mahallesi İstanbul caddesi 6265 Sokak No:17 Daire :4 Lastikçi Üstü",,Gebze,Kocaeli,"osman yilmaz mah, istanbul cad, 6265 sok, 17, gebze, kocaeli",4987,2530
+"Elma Sokak Armut Apartmani 216 371 59 39","Dikilitaş",Beşiktaş,İstanbul,"elma sok, 216, beşiktas, istanbul",9500,4691
+"Kemalpasa mahallesi 1 halide edip sokak no:10 d:1 sefakoy/kucukcekmece/istanbul",KEMALPAŞA,KÜÇÜKÇEKMECE,İstanbul,"kemalpasa mah, 1 halide edip sok, 10, kucukcekmece, istanbul",1542,4682

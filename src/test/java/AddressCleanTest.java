@@ -59,7 +59,7 @@ public class AddressCleanTest {
     public void addressCleanTest(Table table) {
 
         List<Address> addressesList = new ArrayList();
-        createAddress(addressesList,table);
+        createAddress(addressesList, table);
 
         List<AddressOutput> list;
         list = given().header("X-Auth-Token", getToken())
@@ -70,39 +70,57 @@ public class AddressCleanTest {
                 .then()
                 .extract().body().jsonPath().getList("data", AddressOutput.class);
 
-        List<String> expectedText = new ArrayList();
-        for(TableRow row: table.getTableRows()) {
-            expectedText.add(row.getCell("ExpectedText"));
-        }
         List<String> AddressText = new ArrayList();
-        for(TableRow row: table.getTableRows()) {
-            AddressText.add(row.getCell("AddressText"));
-        }
-        List<String> cleanedAddress = new ArrayList();
+        List<String> expectedText = new ArrayList();
+        List<Long> districtId = new ArrayList();
+        List<Long> districtXdockId = new ArrayList();
 
-        for (AddressOutput addressOutput : list) {
-            cleanedAddress.add(addressOutput.getCleanText());
+        for (TableRow row : table.getTableRows()) {
+            AddressText.add(row.getCell("AddressText"));
+            expectedText.add(row.getCell("ExpectedText"));
+            districtId.add((Long.parseLong(row.getCell("DistrictId"))));
+            districtXdockId.add(Long.parseLong(row.getCell("DistrictXdockId")));
         }
 
         int total=0;
-        int count=0;
-        List<String> inmatchedAddress = new ArrayList();
+        int textCount = 0;
+        int districtCount = 0;
+        int districtXdockCount = 0;
 
         Gauge.writeMessage("Comparison results:");
         Gauge.writeMessage("--------------------");
 
-        for (AddressOutput addressOutput : list) {
-            if (!expectedText.get(total).equals(addressOutput.getCleanText())) {
-                Gauge.writeMessage("ADDRESSTEXT: "+AddressText.get(total)+", CLEANTEXT: "+addressOutput.getCleanText()+", EXPECTEDTEXT: "+expectedText.get(total));
-                inmatchedAddress.add(AddressText.get(total));
-                count++;
+            for (AddressOutput addressOutput : list) {
+                if (!expectedText.get(total).equals(addressOutput.getCleanText())) {
+                    int row = total+1;
+                    Gauge.writeMessage(row+" . satýrda cleantext hatasý. ADDRESSTEXT: "+AddressText.get(total)+", CLEANTEXT: "+addressOutput.getCleanText()+", EXPECTEDTEXT: "+expectedText.get(total));
+                    textCount++;
+                }
+                if (!districtId.get(total).equals(addressOutput.getDistrictId())) {
+                    int row = total+1;
+                    Gauge.writeMessage(row+" . satýrda district hatasý. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTID: "+addressOutput.getDistrictId()+", EXPECTED DISTRICTID: "+districtId.get(total));
+                    districtCount++;
+                }
+                if (addressOutput.getDistrictXdockId()!=0){
+
+                    if (!districtXdockId.get(total).equals(addressOutput.getDistrictXdockId())) {
+                        int row = total+1;
+                        Gauge.writeMessage(row+" . satýrda districtXdock hatasý. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTXDOCKID: "+addressOutput.getDistrictXdockId()+", EXPECTED DISTRICTXDOCKID: "+districtId.get(total));
+                        districtXdockCount++;
+                    }
+                }else{
+                    if (!districtXdockId.get(total).equals(addressOutput.getTownXdockId())) {
+                        int row = total+1;
+                        Gauge.writeMessage(row+" . satýrda districtXdock hatasý. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTID: "+addressOutput.getTownXdockId()+", EXPECTED DISTRICTID: "+districtId.get(total));
+                        districtXdockCount++;
+                    }
+                }
+                total++;
             }
-            total++;
+            if(textCount>0 || districtCount>0){
+                Assert.assertFalse("All addresses does not match.",textCount>0 || districtCount>0);
+            }else{
+                Gauge.writeMessage("All addresses are match.");
+            }
         }
-        if(count>0){
-            Assert.assertFalse(count+" of "+total+" addresses does not match.",count>0);
-        }else{
-            Gauge.writeMessage("All of "+total+" addresses are match.");
-        }
-    }
 }

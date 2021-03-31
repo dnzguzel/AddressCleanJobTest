@@ -93,32 +93,32 @@ public class AddressCleanTest {
             for (AddressOutput addressOutput : list) {
                 if (!expectedText.get(total).equals(addressOutput.getCleanText())) {
                     int row = total+1;
-                    Gauge.writeMessage(row+" . satırda cleantext hatası. ADDRESSTEXT: "+AddressText.get(total)+", CLEANTEXT: "+addressOutput.getCleanText()+", EXPECTEDTEXT: "+expectedText.get(total));
+                    Gauge.writeMessage(row+") CleanText comparing error! CLEANTEXT: "+addressOutput.getCleanText()+" || EXPECTEDTEXT: "+expectedText.get(total));
                     textCount++;
                 }
                 if (!districtId.get(total).equals(addressOutput.getDistrictId())) {
                     int row = total+1;
-                    Gauge.writeMessage(row+" . satırda district hatası. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTID: "+addressOutput.getDistrictId()+", EXPECTED DISTRICTID: "+districtId.get(total));
+                    Gauge.writeMessage(row+") DistrictId comparing error! DISTRICTID: "+addressOutput.getDistrictId()+" || EXPECTED DISTRICTID: "+districtId.get(total));
                     districtCount++;
                 }
                 if (addressOutput.getDistrictXdockId()!=0){
 
                     if (!districtXdockId.get(total).equals(addressOutput.getDistrictXdockId())) {
                         int row = total+1;
-                        Gauge.writeMessage(row+" . satırda districtXdock hatası. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTXDOCKID: "+addressOutput.getDistrictXdockId()+", EXPECTED DISTRICTXDOCKID: "+districtId.get(total));
+                        Gauge.writeMessage(row+") DistrictXdockId comparing error! DISTRICTXDOCKID: "+addressOutput.getDistrictXdockId()+" || EXPECTED DISTRICTXDOCKID: "+districtXdockId.get(total));
                         districtXdockCount++;
                     }
                 }else{
                     if (!districtXdockId.get(total).equals(addressOutput.getTownXdockId())) {
                         int row = total+1;
-                        Gauge.writeMessage(row+" . satırda districtXdock hatası. ADDRESSTEXT: "+AddressText.get(total)+", DISTRICTID: "+addressOutput.getTownXdockId()+", EXPECTED DISTRICTID: "+districtId.get(total));
+                        Gauge.writeMessage(row+") DistrictXdockId comparing error! DISTRICTXDOCKID: "+addressOutput.getTownXdockId()+" || EXPECTED DISTRICTXDOCKID: "+districtXdockId.get(total));
                         districtXdockCount++;
                     }
                 }
                 total++;
             }
-            if(textCount>0 || districtCount>0){
-                Assert.assertFalse("All addresses does not match.",textCount>0 || districtCount>0);
+            if(textCount>0 || districtCount>0 || districtXdockCount>0){
+                Assert.assertFalse("All addresses does not match.",textCount>0 || districtCount>0 || districtXdockCount>0);
             }else{
                 Gauge.writeMessage("All addresses are match.");
             }

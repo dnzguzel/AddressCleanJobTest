@@ -134,8 +134,8 @@ public class AddressCleanTest {
         }
 
         if (param.equals("true")){
-            System.out.println("Parametre true dondu");
+            Gauge.writeMessage("Parametre true dondu");
         }
-        System.out.println("parametre false dondu");
+        Gauge.writeMessage("parametre false dondu");
     }
 }

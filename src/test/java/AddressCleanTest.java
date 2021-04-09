@@ -129,7 +129,7 @@ public class AddressCleanTest {
 
         Gauge.writeMessage(param1);
 
-        if (param1.equals(true)){
+        if (param1.equals("true")){
             System.out.println("Parametre true dondu");
         }
         System.out.println("parametre false dondu");

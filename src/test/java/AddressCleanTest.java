@@ -134,7 +134,7 @@ public class AddressCleanTest {
             Gauge.writeMessage("%s=%s%n", envName, env.get(envName));
         }
 */
-        if (param.equals(true)){
+        if (param.equals("true")){
             Gauge.writeMessage("Parametre true dondu");
         }else {
             Gauge.writeMessage("Parametre false dondu");

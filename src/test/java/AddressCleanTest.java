@@ -126,6 +126,9 @@ public class AddressCleanTest {
     @Step("Parametre kontrol")
     public void checkParemter(){
         String param1=System.getProperty("param1");
+
+        Gauge.writeMessage(param1);
+
         if (param1.equals(true)){
             System.out.println("Parametre true dondu");
         }

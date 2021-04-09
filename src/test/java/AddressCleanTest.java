@@ -16,6 +16,7 @@ public class AddressCleanTest {
        String userName = "hbintegration";
        String password = "admin123";
        String param1;
+       String param2;
 
 
     @BeforeScenario
@@ -23,6 +24,7 @@ public class AddressCleanTest {
         RestAssured.baseURI = "http://10.70.82.44";
         RestAssured.port = 8802;
         param1=System.getProperty("param1");
+        param2=System.getenv("param1");
     }
 
        private String getToken() {
@@ -128,9 +130,9 @@ public class AddressCleanTest {
     @Step("Parametre kontrol")
     public void checkParemter(){
 
-        Gauge.writeMessage(param1);
+        Gauge.writeMessage(param2);
 
-        if (param1.equals("true")){
+        if (param2.equals("true")){
             System.out.println("Parametre true dondu");
         }
         System.out.println("parametre false dondu");

@@ -6,6 +6,8 @@ import model.AddressOutput;
 import org.junit.Assert;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class AddressCleanTest {
@@ -130,11 +132,15 @@ public class AddressCleanTest {
     @Step("Parametre kontrol")
     public void checkParemter(){
 
-        Gauge.writeMessage(param2);
-
-        if (param2.equals("true")){
-            System.out.println("Parametre true dondu");
+        //name and value of all environment variable in Java  program
+        Map<String, String> env = System.getenv();
+        for (String envName : env.keySet()) {
+            Gauge.writeMessage("%s=%s%n", envName, env.get(envName));
         }
-        System.out.println("parametre false dondu");
+
+//        if (param2.equals("true")){
+//            System.out.println("Parametre true dondu");
+//        }
+//        System.out.println("parametre false dondu");
     }
 }

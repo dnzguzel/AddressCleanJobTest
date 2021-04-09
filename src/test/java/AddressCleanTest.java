@@ -15,7 +15,6 @@ public class AddressCleanTest {
        private static String token;
        String userName = "hbintegration";
        String password = "admin123";
-       String param1=System.getProperty("param1");
 
 
     @BeforeScenario
@@ -126,6 +125,7 @@ public class AddressCleanTest {
         }
     @Step("Parametre kontrol")
     public void checkParemter(){
+        String param1=System.getProperty("param1");
         if (param1.equals(true)){
             System.out.println("Parametre true dondu");
         }

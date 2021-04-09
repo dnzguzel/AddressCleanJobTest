@@ -15,6 +15,7 @@ public class AddressCleanTest {
        private static String token;
        String userName = "hbintegration";
        String password = "admin123";
+       String param1=System.getProperty("param1");
 
 
     @BeforeScenario
@@ -123,4 +124,11 @@ public class AddressCleanTest {
                 Gauge.writeMessage("All addresses are match.");
             }
         }
+    @Step("Parametre kontrol")
+    public void checkParemter(){
+        if (param1.equals(true)){
+            System.out.println("Parametre true dondu");
+        }
+        System.out.println("parametre false dondu");
+    }
 }

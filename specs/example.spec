@@ -10,3 +10,7 @@ AddressCleanCheck2
 ------------
 tags:inmatch
 * Clean address check from <table: Files/AddressListSample.csv>
+
+ParameterCheck
+--------------
+* Parametre kontrol

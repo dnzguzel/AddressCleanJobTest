@@ -17,16 +17,11 @@ public class AddressCleanTest {
        private static String token;
        String userName = "hbintegration";
        String password = "admin123";
-       String param1;
-       String param2;
-
 
     @BeforeScenario
     public void beforeScenario(){
         RestAssured.baseURI = "http://10.70.82.44";
         RestAssured.port = 8802;
-        param1=System.getProperty("param1");
-        param2=System.getenv("param1");
     }
 
        private String getToken() {
@@ -131,16 +126,16 @@ public class AddressCleanTest {
         }
     @Step("Parametre kontrol")
     public void checkParemter(){
-
+        String param=System.getenv("JOM_PARAM_1");
         //name and value of all environment variable in Java  program
         Map<String, String> env = System.getenv();
         for (String envName : env.keySet()) {
             Gauge.writeMessage("%s=%s%n", envName, env.get(envName));
         }
 
-//        if (param2.equals("true")){
-//            System.out.println("Parametre true dondu");
-//        }
-//        System.out.println("parametre false dondu");
+        if (param.equals("true")){
+            System.out.println("Parametre true dondu");
+        }
+        System.out.println("parametre false dondu");
     }
 }

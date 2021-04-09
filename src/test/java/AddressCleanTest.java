@@ -15,12 +15,14 @@ public class AddressCleanTest {
        private static String token;
        String userName = "hbintegration";
        String password = "admin123";
+       String param1;
 
 
     @BeforeScenario
     public void beforeScenario(){
         RestAssured.baseURI = "http://10.70.82.44";
         RestAssured.port = 8802;
+        param1=System.getProperty("param1");
     }
 
        private String getToken() {
@@ -125,7 +127,6 @@ public class AddressCleanTest {
         }
     @Step("Parametre kontrol")
     public void checkParemter(){
-        String param1=System.getProperty("param1");
 
         Gauge.writeMessage(param1);
 

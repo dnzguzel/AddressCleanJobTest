@@ -127,15 +127,17 @@ public class AddressCleanTest {
     @Step("Parametre kontrol")
     public void checkParemter(){
         String param=System.getenv("JOB_PARAM_1");
+/*
         //name and value of all environment variable in Java  program
         Map<String, String> env = System.getenv();
         for (String envName : env.keySet()) {
             Gauge.writeMessage("%s=%s%n", envName, env.get(envName));
         }
-
-        if (param.equals("true")){
+*/
+        if (param.equals(true)){
             Gauge.writeMessage("Parametre true dondu");
+        }else {
+            Gauge.writeMessage("Parametre false dondu");
         }
-        Gauge.writeMessage("parametre false dondu");
     }
 }
